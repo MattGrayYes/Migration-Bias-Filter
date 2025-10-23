@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "Migration Bias Filter",
+  "version": "0.1",
+  "description": "Replaces biased migration terminology with more neutral language typically applied to domestic citizens abroad. Highlights the linguistic double standard where similar situations are described differently based on origin - revealing how 'migrants' become 'expats' when viewed through a different lens.",
+
+  "permissions": [
+    "activeTab",
+    "<all_urls>"
+  ],
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "migration-bias-filter@mattg.co.uk",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/replacer.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
